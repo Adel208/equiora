@@ -1,0 +1,17 @@
+{
+  "name": "equiora-website",
+  "version": "1.0.0",
+  "description": "Site web professionnel pour soins équins naturels avec animations GSAP",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000 || python -m http.server 8000 || php -S localhost:8000",
+    "dev": "live-server --port=8000 --open=/",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "netlify deploy --prod --build",
+    "preview": "netlify deploy",
+    "lint:css": "stylelint 'css/**/*.css'",
+    "lint:js": "eslint 'js/**/*.js'",
+    "optimize:images": "imagemin 'assets/images/**/*.{jpg,png}' --out-dir='assets/images/optimized'",
+    "test": "echo 'No tests specified'"
+  }
+},

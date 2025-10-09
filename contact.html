@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Equiora</title>
+    <link rel="stylesheet" href="css/style.css?v=2024.10.07.2">
+    <link rel="stylesheet" href="css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Equiora</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="approche.html" class="nav-link">Mon Approche</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tarifs-premium.html" class="nav-link">Tarifs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+                <li class="nav-item nav-cta">
+                    <a href="contact.html" class="nav-cta-btn">
+                        <span>Prendre RDV</span>
+                        <i class="fas fa-calendar-alt"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-contact">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Contactez-moi</h1>
+                <p class="hero-subtitle">Prenons soin ensemble du bien-être de votre cheval</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Téléphone</h3>
+                        <p>+33 6 12 34 56 78</p>
+                        <span>Lun-Sam 8h-19h</span>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>contact@equiora.fr</p>
+                        <span>Réponse sous 24h</span>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Zone d'intervention</h3>
+                        <p>Région Normandie</p>
+                        <span>Déplacement à domicile</span>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Urgences</h3>
+                        <p>Service 24h/7j</p>
+                        <span>Tarif majoré</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map Section -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h2>Prendre Rendez-vous</h2>
+                        <p>Remplissez ce formulaire et je vous recontacterai dans les plus brefs délais.</p>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <span class="form-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <span class="form-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="form-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="form-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="horseName">Nom du cheval</label>
+                            <input type="text" id="horseName" name="horseName">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="horseAge">Âge du cheval</label>
+                                <select id="horseAge" name="horseAge">
+                                    <option value="">Sélectionner</option>
+                                    <option value="0-2">0-2 ans</option>
+                                    <option value="3-5">3-5 ans</option>
+                                    <option value="6-10">6-10 ans</option>
+                                    <option value="11-15">11-15 ans</option>
+                                    <option value="16-20">16-20 ans</option>
+                                    <option value="20+">Plus de 20 ans</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="horseBreed">Race</label>
+                                <input type="text" id="horseBreed" name="horseBreed" placeholder="ex: Selle Français">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service souhaité *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Sélectionner un service</option>
+                                <option value="osteopathie">Ostéopathie équine</option>
+                                <option value="massage">Massage thérapeutique</option>
+                                <option value="phytotherapie">Phytothérapie</option>
+                                <option value="acupuncture">Acupuncture</option>
+                                <option value="bilan">Bilan de santé complet</option>
+                                <option value="suivi-sportif">Suivi sportif</option>
+                                <option value="autre">Autre / Conseil</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgency">Urgence</label>
+                            <select id="urgency" name="urgency">
+                                <option value="normal">Rendez-vous normal</option>
+                                <option value="urgent">Urgent (sous 48h)</option>
+                                <option value="emergency">Urgence (sous 24h)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Adresse du rendez-vous *</label>
+                            <textarea id="location" name="location" rows="2" required placeholder="Adresse complète où se trouve le cheval"></textarea>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Description du problème / Demande</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Décrivez les symptômes, comportements observés, ou votre demande spécifique..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredDate">Date souhaitée</label>
+                            <input type="date" id="preferredDate" name="preferredDate">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredTime">Créneau horaire préféré</label>
+                            <select id="preferredTime" name="preferredTime">
+                                <option value="">Pas de préférence</option>
+                                <option value="morning">Matin (8h-12h)</option>
+                                <option value="afternoon">Après-midi (12h-17h)</option>
+                                <option value="evening">Fin de journée (17h-19h)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Je souhaite recevoir des conseils et actualités par email
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                J'accepte les <a href="#" target="_blank">conditions générales</a> et la <a href="#" target="_blank">politique de confidentialité</a> *
+                            </label>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-text">Envoyer ma demande</span>
+                            <span class="btn-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                Envoi en cours...
+                            </span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Demande envoyée avec succès !</h3>
+                        <p>Merci pour votre confiance. Je vous recontacterai dans les plus brefs délais pour convenir d'un rendez-vous.</p>
+                        <button class="btn btn-outline" onclick="resetForm()">Nouvelle demande</button>
+                    </div>
+                </div>
+                
+                <!-- Map Container -->
+                <div class="map-container">
+                    <div class="map-header">
+                        <h3>Zone d'intervention</h3>
+                        <p>Je me déplace dans toute la région Normandie</p>
+                    </div>
+                    <div class="map-wrapper">
+                        <div id="map" class="interactive-map"></div>
+                        <div class="map-overlay">
+                            <div class="map-info">
+                                <h4>Frais de déplacement</h4>
+                                <ul>
+                                    <li><span class="zone-color zone-1"></span> 0-30km : Inclus</li>
+                                    <li><span class="zone-color zone-2"></span> 30-50km : +15€</li>
+                                    <li><span class="zone-color zone-3"></span> 50km+ : +0,50€/km</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Questions Fréquentes</h2>
+                <p class="section-subtitle">Avant de me contacter</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Comment prendre rendez-vous ?</h3>
+                    <p>Utilisez le formulaire ci-dessus ou appelez-moi directement. Je confirme toujours le rendez-vous par SMS ou email.</p>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quels sont vos délais ?</h3>
+                    <p>Rendez-vous normal sous 5-7 jours. Pour les urgences, je peux intervenir sous 24-48h selon disponibilité.</p>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>Quels sont vos tarifs ?</h3>
+                    <p>Consultez la page Services pour les tarifs détaillés. Devis gratuit pour les suivis personnalisés.</p>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Vous déplacez-vous partout ?</h3>
+                    <p>Oui, dans toute la Normandie. Frais de déplacement selon la distance (voir carte ci-dessus).</p>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Faut-il l'accord du vétérinaire ?</h3>
+                    <p>Pour l'ostéopathie, oui selon la loi. Je peux vous aider à obtenir cette autorisation si nécessaire.</p>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-icon">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <h3>Mon cheval est difficile...</h3>
+                    <p>Pas de problème ! J'ai l'habitude des chevaux sensibles. Je prends toujours le temps nécessaire.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="emergency-contact">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="emergency-text">
+                    <h3>Urgence ?</h3>
+                    <p>Pour les cas urgents, contactez-moi directement par téléphone</p>
+                </div>
+                <div class="emergency-action">
+                    <a href="tel:+33612345678" class="btn btn-emergency">
+                        <i class="fas fa-phone"></i>
+                        <span>Appeler maintenant</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Equiora</h3>
+                    <p>Soins équins naturels et personnalisés pour le bien-être de votre cheval.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#osteopathie">Ostéopathie</a></li>
+                        <li><a href="services.html#massage">Massage</a></li>
+                        <li><a href="services.html#phytotherapie">Phytothérapie</a></li>
+                        <li><a href="services.html#acupuncture">Acupuncture</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul class="footer-links">
+                        <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de Confidentialité</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +33 6 12 34 56 78</p>
+                        <p><i class="fas fa-envelope"></i> contact@equiora.fr</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Région Normandie</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Equiora. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
