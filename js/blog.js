@@ -85,6 +85,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // GSAP Animations
     gsap.registerPlugin(ScrollTrigger);
     
+    // Set initial visibility to ensure text shows
+    gsap.set('.blog-hero .hero-title, .blog-hero .hero-subtitle', { 
+        opacity: 1,
+        visibility: 'visible'
+    });
+    
+    // Hero animations (like index.html)
+    gsap.timeline()
+        .from('.blog-hero .hero-title', {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        })
+        .from('.blog-hero .hero-subtitle', {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        }, '-=0.5');
+    
     // Animate featured article
     gsap.set('.featured-article', { opacity: 1, y: 0 });
     gsap.from('.featured-article', {

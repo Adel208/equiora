@@ -659,8 +659,15 @@ class ServicesScrollEffects {
     }
 
     init() {
+        // Temporarily disable hero animations to fix display issue
+        // this.setupHeroAnimations();
         this.setupParallaxEffects();
         this.setupRevealAnimations();
+    }
+
+    setupHeroAnimations() {
+        // Hero animations disabled - text needs to display immediately
+        // Will be re-enabled once CSS conflicts are resolved
     }
 
     setupParallaxEffects() {

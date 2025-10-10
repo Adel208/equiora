@@ -354,8 +354,32 @@ class ApprochScrollEffects {
     }
 
     init() {
+        this.setupHeroAnimations();
         this.setupParallaxEffects();
         this.setupRevealAnimations();
+    }
+
+    setupHeroAnimations() {
+        // Set initial visibility to ensure text shows
+        gsap.set('.hero-approche .hero-title, .hero-approche .hero-subtitle', { 
+            opacity: 1,
+            visibility: 'visible'
+        });
+        
+        // Hero content animations (like index.html)
+        gsap.timeline()
+            .from('.hero-approche .hero-title', {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            })
+            .from('.hero-approche .hero-subtitle', {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power2.out'
+            }, '-=0.5');
     }
 
     setupParallaxEffects() {

@@ -420,8 +420,32 @@ class ContactAnimations {
     }
 
     init() {
+        this.setupHeroAnimations();
         this.setupScrollAnimations();
         this.setupHoverEffects();
+    }
+
+    setupHeroAnimations() {
+        // Set initial visibility to ensure text shows
+        gsap.set('.hero-contact .hero-title, .hero-contact .hero-subtitle', { 
+            opacity: 1,
+            visibility: 'visible'
+        });
+        
+        // Hero content animations (like index.html)
+        gsap.timeline()
+            .from('.hero-contact .hero-title', {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            })
+            .from('.hero-contact .hero-subtitle', {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power2.out'
+            }, '-=0.5');
     }
 
     setupScrollAnimations() {
