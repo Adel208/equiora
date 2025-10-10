@@ -949,6 +949,130 @@ class ScrollAnimations {
             }
         });
 
+        // "Une Approche Personnalisée" section animations
+        // Header icon animation (pop-in with rotation)
+        gsap.fromTo('.services-unified .header-icon',
+            {
+                scale: 0,
+                rotation: -180,
+                opacity: 0
+            },
+            {
+                scale: 1,
+                rotation: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'back.out(1.7)',
+                scrollTrigger: {
+                    trigger: '.services-unified',
+                    start: 'top 75%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Title fade-in from top
+        gsap.fromTo('.services-unified .services-title',
+            {
+                y: -30,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.2,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.services-unified',
+                    start: 'top 75%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Description paragraphs stagger-in
+        gsap.fromTo('.services-unified .services-description, .services-unified .services-mission',
+            {
+                y: 20,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.7,
+                stagger: 0.15,
+                delay: 0.4,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.services-unified',
+                    start: 'top 75%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Category cards slide-in with stagger
+        gsap.fromTo('.services-unified .category-card',
+            {
+                y: 60,
+                opacity: 0,
+                scale: 0.9
+            },
+            {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.7,
+                stagger: 0.15,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.services-categories',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Category icons rotation animation
+        gsap.fromTo('.services-unified .category-icon',
+            {
+                rotation: -20,
+                scale: 0.8
+            },
+            {
+                rotation: 0,
+                scale: 1,
+                duration: 0.6,
+                stagger: 0.15,
+                ease: 'back.out(1.5)',
+                scrollTrigger: {
+                    trigger: '.services-categories',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Services subtitle fade-in
+        gsap.fromTo('.services-unified .services-subtitle',
+            {
+                y: 30,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.services-subtitle',
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
         // Footer animation
         gsap.fromTo('.footer-section',
             {
